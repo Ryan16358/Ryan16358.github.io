@@ -1,12 +1,29 @@
+/*default setup for full body */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* text balance */
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+p,
+li {
+  text-wrap: pretty;
+}
+
+/*making two grid box */
+
 .container {
   display: grid;
-  grid-template-columns: 35% auto;
+  grid-template-columns: 30% auto;
   height: 100vh;
 }
 
@@ -29,7 +46,8 @@
 
 .box1 h2 {
   text-align: center;
-  font-size: 4vw;
+  font-size: 3vw;
+  color: rgba(255, 255, 255, 0.712);
   word-wrap: break-word;
 }
 
@@ -59,4 +77,34 @@
   .box2 {
     font-size: 2.5rem;
   }
+}
+
+footer {
+  margin-top: auto;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.829);
+}
+a {
+  text-decoration: none;
+}
+.box1 ul li {
+  list-style: none;
+}
+
+.box1 nav ul {
+  margin: 2rem 0;
+}
+
+.box1 nav ul li {
+  margin: 0.5rem 0;
+}
+
+.box1 nav ul li a {
+  color: white;
+  font-size: 1rem;
+}
+
+footer a {
+  font-size: 1rem;
+  color: white;
 }
