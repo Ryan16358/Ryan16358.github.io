@@ -13,6 +13,4 @@ function changColor() {
   currentColor = (currentColor + 1) % color.length;
   box1.style.backgroundColor = color[currentColor];
   box1.setAttribute("data-color-index", currentColor);
-
-
 }
