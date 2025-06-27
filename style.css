@@ -130,3 +130,59 @@ footer a {
 .box1 a:visited {
   text-decoration: underline;
 }
+
+/* Social Media Icons Styling */
+.social {
+  display: flex;
+  gap: 1rem; /* Added consistent spacing between icons */
+  margin: 2rem 0;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.social div {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.social div:hover {
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+.social div i {
+  color: #333;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social div:hover i {
+  color: white;
+}
+
+/* Responsive design for social icons */
+@media (max-width: 770px) {
+  .social {
+    gap: 0.8rem;
+    margin: 1.5rem 0;
+  }
+
+  .social div {
+    width: 40px;
+    height: 40px;
+
+    justify-content: space-evenly;
+  }
+
+  .social div i {
+    font-size: 1rem;
+  }
+}
