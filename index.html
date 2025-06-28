@@ -17,31 +17,80 @@
     <main>
       <div class="container">
         <div class="box1">
-          <h1>Md Rayhan Hossain</h1>
-          <h2>Developer & Software Engineer</h2>
-          <nav>
-            <ul>
-              <li><a href="#">About</a></li>
+          <!-- First Element: Header -->
+          <div class="header-section">
+            <h1 id="name">Md Rayhan Hossain</h1>
+            <h2>Developer & Software Engineer</h2>
+          </div>
 
-              <li><a href="#">Blog archive</a></li>
+          <!-- Second Element: Navigation -->
+          <div class="nav-section">
+            <nav>
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blog archive</a></li>
+                <li><a href="#">Projects</a></li>
+              </ul>
+            </nav>
+          </div>
 
-              <li><a href="#">Projects</a></li>
-            </ul>
-          </nav>
-          <section class="social">
-            <div><i class="fa-brands fa-facebook"></i></div>
-            <div><i class="fa-brands fa-linkedin-in"></i></div>
-            <div><i class="fa-brands fa-twitter"></i></div>
-            <div><i class="fa-brands fa-github"></i></div>
-            <div onclick="changColor()">
-              <i class="fa-solid fa-question"></i>
-            </div>
-          </section>
-          <footer id="credit">
-            <p>&copy; 2025. <a href="https://anjana.dev/">Credits.</a></p>
-          </footer>
+          <!-- Third Element: Social Media -->
+          <div class="social-section">
+            <section class="social">
+              <div><i class="fa-brands fa-facebook"></i></div>
+              <div><i class="fa-brands fa-linkedin-in"></i></div>
+              <div><i class="fa-brands fa-twitter"></i></div>
+              <div><i class="fa-brands fa-github"></i></div>
+              <!-- Fixed: Added ID and event listener approach -->
+              <div onclick="changeColor()">
+                <i class="fa-solid fa-question"></i>
+              </div>
+            </section>
+          </div>
+
+          <!-- Fourth Element: Footer -->
+          <div class="footer-section">
+            <footer id="credit">
+              <p>&copy; 2025. <a href="https://anjana.dev/">Credits.</a></p>
+            </footer>
+          </div>
         </div>
-        <div class="box2">Hi! I'm Rayhan</div>
+
+        <div class="box2">
+          <!-- Main greeting -->
+          <div class="greeting">Hi! I'm Rayhan</div>
+
+          <!-- Extra Content in box2 -->
+          <div class="extra-content">
+            <h3>Welcome to My Portfolio</h3>
+            <p>
+              I'm a passionate developer with expertise in modern web
+              technologies. I love creating beautiful, functional, and
+              user-friendly applications.
+            </p>
+            <p>
+              My journey in software development has been exciting and
+              challenging. I continuously learn new technologies and improve my
+              skills to deliver the best solutions.
+            </p>
+            <p>
+              Feel free to explore my work and get in touch if you'd like to
+              collaborate on interesting projects.
+            </p>
+            <p>
+              I specialize in creating responsive web applications, working with
+              modern frameworks, and implementing clean, maintainable code.
+            </p>
+            <p>
+              My goal is to build digital experiences that make a difference and
+              help businesses achieve their objectives.
+            </p>
+            <p>
+              Let's connect and discuss how we can work together to bring your
+              ideas to life through innovative web solutions.
+            </p>
+          </div>
+        </div>
       </div>
     </main>
     <script src="app.js"></script>
