@@ -42,6 +42,8 @@ li {
   z-index: 10;
   height: 100vh;
   margin-right: -12px;
+  word-wrap: break-word;
+  max-width: 100%;
 }
 
 /* Scrollbar styling WITHOUT padding - full height track */
@@ -52,7 +54,6 @@ li {
 .box1::-webkit-scrollbar-track {
   background: white;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  /* REMOVED: margin-top and margin-bottom - scrollbar now extends full height */
 }
 
 .box1::-webkit-scrollbar-thumb {
@@ -76,17 +77,26 @@ li {
   margin-bottom: 3rem;
   padding-top: 2rem;
   flex-shrink: 0;
+  overflow: hidden;
+  max-width: 100%;
 }
 
+/* H1 - BIGGEST HEADING - Fixed word wrap and line spacing */
 .box1 h1 {
   text-align: left;
-  /* font-size: clamp(2rem, 3vw, 3.5rem); */
-  /* font-size: clamp(4.7rem, 2vw, 4rem); */
+  font-size: clamp(3.5rem, 8vw + 2rem, 7rem);
   margin-bottom: 1.5rem;
   font-weight: bold;
   line-height: 1.2;
   word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  white-space: normal;
   transition: all 0.3s ease;
+  letter-spacing: -0.02em;
+  max-width: 100%;
+  width: 100%;
 }
 
 .box1 h1:hover {
@@ -94,14 +104,38 @@ li {
   opacity: 0.7;
 }
 
+/* H2 - Second largest, but significantly smaller than H1 */
 .box1 h2 {
   text-align: left;
-  font-size: clamp(1.5rem, 3.9vw, 2rem);
+  font-size: clamp(1.8rem, 4vw + 0.5rem, 2.8rem);
   color: rgba(255, 255, 255, 0.8);
-  font-weight: 400;
-  line-height: 1.4;
+  font-weight: 500;
+  line-height: 1.3;
   word-wrap: break-word;
   margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+/* H3 - Third in hierarchy */
+.box1 h3 {
+  text-align: left;
+  font-size: clamp(1.4rem, 3vw + 0.3rem, 2.2rem);
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  line-height: 1.4;
+  word-wrap: break-word;
+  margin-bottom: 0.8rem;
+}
+
+/* H4 - Smallest heading */
+.box1 h4 {
+  text-align: left;
+  font-size: clamp(1.2rem, 2.5vw + 0.2rem, 1.8rem);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  line-height: 1.4;
+  word-wrap: break-word;
+  margin-bottom: 0.6rem;
 }
 
 /* Navigation Section - Second Element */
@@ -133,7 +167,7 @@ li {
 
 .box1 nav ul li a {
   color: white;
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-size: clamp(1rem, 2vw + 0.2rem, 1.4rem);
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -237,14 +271,15 @@ footer a {
   font-size: 1rem;
 }
 
-/* Box2 styling */
+/* FIXED: Box2 styling - Left-aligned content */
 .box2 {
   background-color: white;
   color: black;
   display: flex;
   flex-direction: column;
+  /* CHANGED: align items to flex-start for left alignment */
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   padding: 3rem 2rem;
   position: relative;
   z-index: 1;
@@ -270,41 +305,195 @@ footer a {
   background: rgba(0, 0, 0, 0.5);
 }
 
-/* Greeting in box2 */
-.greeting {
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  font-weight: 300;
-  margin-bottom: 3rem;
-  text-align: center;
+/* FIXED: Box2 Heading Hierarchy - Left aligned */
+.box2 h1 {
+  font-size: clamp(3rem, 7vw + 1.5rem, 6rem);
   color: #2c3e50;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  /* CHANGED: Left aligned instead of center */
+  text-align: left;
+  letter-spacing: -0.02em;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  white-space: normal;
+  max-width: 100%;
+  width: 100%;
 }
 
-/* Extra content styling for box2 */
+.box2 h2 {
+  font-size: clamp(1.6rem, 3.5vw + 0.4rem, 2.5rem);
+  color: #34495e;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  /* ENFORCED: Left alignment */
+  text-align: left;
+}
+
+.box2 h3 {
+  font-size: clamp(1.3rem, 3vw + 0.3rem, 2rem);
+  color: #2c3e50;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+  line-height: 1.4;
+  /* ENFORCED: Left alignment */
+  text-align: left;
+}
+
+.box2 h4 {
+  font-size: clamp(1.1rem, 2vw + 0.2rem, 1.6rem);
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  /* ENFORCED: Left alignment */
+  text-align: left;
+}
+
+/* FIXED: Greeting - Left aligned */
+.greeting {
+  font-size: clamp(2.2rem, 5vw + 1rem, 4.5rem);
+  font-weight: 300;
+  margin-bottom: 3rem;
+  /* CHANGED: Left aligned instead of center */
+  text-align: left;
+  color: #2c3e50;
+  line-height: 1.2;
+  /* ADDED: Full width for proper left alignment */
+  width: 100%;
+  align-self: flex-start;
+}
+
+/* FIXED: Extra content styling for box2 - Left aligned */
 .box2 .extra-content {
   width: 100%;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0;
   padding: 2rem 0;
+  /* ADDED: Ensure left alignment */
+  align-self: flex-start;
 }
 
 .box2 .extra-content h3 {
   color: #2c3e50;
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-size: clamp(1.4rem, 3vw + 0.3rem, 2rem);
   margin-bottom: 2rem;
-  text-align: center;
+  /* CHANGED: Left aligned instead of center */
+  text-align: left;
   font-weight: 600;
 }
 
 .box2 .extra-content p {
   color: #555;
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-size: clamp(1rem, 2vw + 0.2rem, 1.3rem);
   line-height: 1.7;
   margin-bottom: 1.8rem;
   text-align: left;
 }
 
+/* ADDED: Additional content elements for Box2 */
+.box2 .content-section {
+  width: 100%;
+  max-width: 100%;
+  align-self: flex-start;
+  margin-bottom: 2rem;
+}
+
+.box2 .content-section h1,
+.box2 .content-section h2,
+.box2 .content-section h3,
+.box2 .content-section h4,
+.box2 .content-section h5,
+.box2 .content-section h6 {
+  text-align: left;
+  width: 100%;
+}
+
+.box2 .content-section p,
+.box2 .content-section ul,
+.box2 .content-section ol,
+.box2 .content-section div {
+  text-align: left;
+  width: 100%;
+}
+
+.box2 .content-section ul li,
+.box2 .content-section ol li {
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
 a {
   text-decoration: none;
+}
+
+/* Size Variations - All with proper word wrap and left alignment */
+.box1 h1.hero {
+  font-size: clamp(4rem, 10vw + 2.5rem, 9rem);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.box1 h1.large {
+  font-size: clamp(3.2rem, 7vw + 1.5rem, 6rem);
+  line-height: 1.15;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.box1 h1.medium {
+  font-size: clamp(3rem, 6vw + 1rem, 5.5rem);
+  line-height: 1.2;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.box1 h1.small {
+  font-size: clamp(2.5rem, 5vw + 0.8rem, 4.5rem);
+  line-height: 1.25;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* H2 Size Variations - Always smaller than H1 */
+.box1 h2.large {
+  font-size: clamp(2rem, 4.5vw + 0.6rem, 3.2rem);
+}
+
+.box1 h2.medium {
+  font-size: clamp(1.8rem, 4vw + 0.5rem, 2.8rem);
+}
+
+.box1 h2.small {
+  font-size: clamp(1.5rem, 3.5vw + 0.4rem, 2.4rem);
+}
+
+/* H3 Size Variations */
+.box1 h3.large {
+  font-size: clamp(1.6rem, 3.5vw + 0.4rem, 2.5rem);
+}
+
+.box1 h3.medium {
+  font-size: clamp(1.4rem, 3vw + 0.3rem, 2.2rem);
+}
+
+.box1 h3.small {
+  font-size: clamp(1.2rem, 2.5vw + 0.2rem, 1.9rem);
 }
 
 /* Responsive design for tablets */
@@ -326,8 +515,30 @@ a {
     padding: 2rem 1.5rem;
   }
 
+  .header-section {
+    margin-bottom: 2.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .social-section {
+    margin: 2.5rem 0 1rem 0;
+  }
+
   .greeting {
     margin-bottom: 2rem;
+  }
+
+  .box2 .extra-content {
+    padding: 1.5rem 0;
+    margin: 0;
+  }
+
+  .box2 .extra-content h3 {
+    margin-bottom: 1.5rem;
+  }
+
+  .box2 .extra-content p {
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -341,7 +552,7 @@ a {
   }
 
   .box1 {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1rem;
     overflow-y: visible;
     height: auto;
     min-height: auto;
@@ -350,11 +561,13 @@ a {
   }
 
   .box2 {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1rem;
     height: auto;
     min-height: auto;
     overflow-y: visible;
     background: linear-gradient(to bottom, #f8f9fa 0%, white 100%);
+    /* MAINTAINED: Left alignment on mobile */
+    align-items: flex-start;
   }
 
   .box1::-webkit-scrollbar,
@@ -363,37 +576,61 @@ a {
   }
 
   .header-section {
-    margin-bottom: 2rem;
-    padding-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding-top: 0.5rem;
   }
 
   .nav-section {
-    margin-bottom: 2rem;
-    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 0;
   }
 
   .social-section {
-    margin: 2rem 0 1rem 0;
+    margin: 1.5rem 0 0.5rem 0;
   }
 
   .footer-section {
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     margin-bottom: 0;
   }
 
   .greeting {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     margin-top: 0;
+    /* MAINTAINED: Left alignment on mobile */
+    text-align: left;
+    align-self: flex-start;
+    width: 100%;
   }
 
   .box2 .extra-content {
     padding: 0;
     margin-top: 0;
+    margin: 0;
+    align-self: flex-start;
+    width: 100%;
+  }
+
+  .box2 .extra-content h3 {
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  .box2 .extra-content p {
+    margin-bottom: 1rem;
+  }
+
+  .box1 nav ul li {
+    padding: 0.2rem 0;
+  }
+
+  .box1 nav ul li a {
+    padding: 0.3rem 0;
   }
 
   .social {
     gap: 0;
-    margin: 1.5rem 0;
+    margin: 1rem 0;
     width: 100%;
     justify-content: space-between;
     flex-wrap: nowrap;
@@ -409,42 +646,216 @@ a {
   .social div i {
     font-size: max(0.7rem, min(1rem, 6vw));
   }
+
+  /* Mobile heading adjustments - maintain hierarchy and left alignment */
+  .box1 h1 {
+    font-size: clamp(2.8rem, 8vw + 1rem, 5rem);
+    line-height: 1.25;
+    margin-bottom: 1.2rem;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    white-space: normal;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .box2 h1 {
+    /* MAINTAINED: Left alignment on mobile */
+    text-align: left;
+    align-self: flex-start;
+    width: 100%;
+  }
+
+  .box1 h2 {
+    font-size: clamp(1.5rem, 4vw + 0.3rem, 2.2rem);
+    margin-bottom: 0.8rem;
+  }
+
+  .box1 h3 {
+    font-size: clamp(1.2rem, 3vw + 0.2rem, 1.8rem);
+    margin-bottom: 0.6rem;
+  }
+
+  .box1 h4 {
+    font-size: clamp(1rem, 2.5vw + 0.1rem, 1.5rem);
+    margin-bottom: 0.5rem;
+  }
 }
 
 /* Extra small screens */
 @media (max-width: 480px) {
   .box1 {
-    padding: 1.5rem 1rem;
+    padding: 1rem 0.8rem;
   }
 
   .box2 {
-    padding: 1.5rem 1rem;
+    padding: 1rem 0.8rem;
+    /* MAINTAINED: Left alignment on small screens */
+    align-items: flex-start;
   }
 
   .header-section {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    padding-top: 0.3rem;
   }
 
   .nav-section {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 0.3rem 0;
   }
 
   .social-section {
-    margin: 1.5rem 0 0.5rem 0;
+    margin: 1rem 0 0.3rem 0;
   }
 
   .footer-section {
-    padding: 0.5rem 0;
+    padding: 0.3rem 0;
+  }
+
+  .greeting {
+    /* MAINTAINED: Left alignment */
+    text-align: left;
+    width: 100%;
+    align-self: flex-start;
+  }
+
+  .box2 .extra-content {
+    margin: 0;
+    width: 100%;
+    align-self: flex-start;
+  }
+
+  .box2 .extra-content h3 {
+    margin-bottom: 0.8rem;
+    text-align: left;
+  }
+
+  .box2 .extra-content p {
+    margin-bottom: 0.8rem;
+  }
+
+  .box1 nav ul {
+    gap: 0;
+  }
+
+  .box1 nav ul li {
+    padding: 0.1rem 0;
+  }
+
+  .box1 nav ul li a {
+    padding: 0.2rem 0;
+  }
+
+  .box1 h1 {
+    font-size: clamp(2.2rem, 7vw + 0.5rem, 4rem);
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    white-space: normal;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .box1 h2 {
+    font-size: clamp(1.3rem, 3.5vw + 0.2rem, 1.9rem);
+    margin-bottom: 0.7rem;
+  }
+
+  .box1 h3 {
+    font-size: clamp(1.1rem, 2.8vw + 0.1rem, 1.6rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .box1 h4 {
+    font-size: clamp(0.95rem, 2.2vw + 0.1rem, 1.3rem);
+    margin-bottom: 0.4rem;
   }
 }
 
+/* Ultra small screens (320px and below) */
 @media (max-width: 320px) {
   .box1 {
-    padding: 1rem 0.8rem;
+    padding: 0.8rem 0.5rem;
   }
 
   .box2 {
-    padding: 1rem 0.8rem;
+    padding: 0.8rem 0.5rem;
+    /* MAINTAINED: Left alignment on ultra small screens */
+    align-items: flex-start;
+  }
+
+  .header-section {
+    margin-bottom: 0.8rem;
+    padding-top: 0.2rem;
+  }
+
+  .nav-section {
+    margin-bottom: 0.8rem;
+    padding: 0.2rem 0;
+  }
+
+  .social-section {
+    margin: 0.8rem 0 0.2rem 0;
+  }
+
+  .footer-section {
+    padding: 0.2rem 0;
+  }
+
+  .greeting {
+    margin-bottom: 0.8rem;
+    /* MAINTAINED: Left alignment */
+    text-align: left;
+    width: 100%;
+    align-self: flex-start;
+  }
+
+  .box2 .extra-content {
+    margin: 0;
+    width: 100%;
+    align-self: flex-start;
+  }
+
+  .box2 .extra-content h3 {
+    margin-bottom: 0.6rem;
+    text-align: left;
+  }
+
+  .box2 .extra-content p {
+    margin-bottom: 0.6rem;
+  }
+
+  .box1 h1 {
+    font-size: clamp(1.8rem, 6vw + 0.3rem, 3.2rem);
+    line-height: 1.35;
+    margin-bottom: 0.8rem;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    white-space: normal;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .box1 h2 {
+    font-size: clamp(1.1rem, 3vw + 0.1rem, 1.6rem);
+    margin-bottom: 0.6rem;
+  }
+
+  .box1 h3 {
+    font-size: clamp(0.95rem, 2.5vw + 0.1rem, 1.4rem);
+    margin-bottom: 0.4rem;
+  }
+
+  .box1 h4 {
+    font-size: clamp(0.85rem, 2vw + 0.05rem, 1.2rem);
+    margin-bottom: 0.3rem;
   }
 }
 
@@ -459,4 +870,48 @@ a {
   .social div i {
     font-size: max(0.6rem, 5vw);
   }
+}
+
+/* Utility classes for alignment control */
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.align-left {
+  align-self: flex-start !important;
+}
+
+.align-center {
+  align-self: center !important;
+}
+
+.align-right {
+  align-self: flex-end !important;
+}
+
+.full-width {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Force left alignment for all Box2 content */
+.box2 * {
+  text-align: left;
+}
+
+/* Override for specific elements that might need center alignment */
+.box2 .center-override {
+  text-align: center !important;
+}
+
+.box2 .right-override {
+  text-align: right !important;
 }
